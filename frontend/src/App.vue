@@ -21,6 +21,7 @@
 
     <v-content>
       <Input/>
+      <ImageList/>
     </v-content>
   </v-app>
 </template>
@@ -28,11 +29,13 @@
 <script>
 //import HelloWorld from './components/HelloWorld';
 import Input from './components/Input';
+import ImageList from './components/ImageList';
 
 export default {
   name: 'App',
   components: {
     Input,
+    ImageList
   },
   data: () => ({
     //

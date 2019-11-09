@@ -10,7 +10,7 @@
     </v-text-field>
     <v-btn
       v-on:click="getPictures"
-      class="mt-n5"
+      class="mt-n5 mb-10"
       rounded
     >
       {{ btn }}
