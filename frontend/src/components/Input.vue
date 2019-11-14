@@ -32,7 +32,7 @@ export default {
   methods: {
     getPictures () {
       bus.$emit('init')
-      this.$axios.post('http://localhost:3000/image/list', {
+      this.$axios.post('http://localhost:3000/api/image/list', {
         link: this.address
       }).then((res) => {
         console.log(res.data.message)
