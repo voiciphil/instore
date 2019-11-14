@@ -8,8 +8,9 @@ exports.getImages = async (req, res, next) => {
     const $ = cheerio.load(body.data)
     let str = '';
     $('script').each((index, elem) => {
-      if (index === 4) {
-        str = $(elem).html();
+      let tmp = $(elem).html();
+      if (tmp.substring(0, 18) === 'window._sharedData') {
+        str = tmp
         str = str.substring(21, str.length - 1)
       }
     })
