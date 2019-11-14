@@ -11,7 +11,7 @@
     </v-text-field>
     <v-btn
       v-on:click="getPictures"
-      class="mt-n5 mb-10"
+      class="mb-10"
       rounded
     >
       {{ btn }}
@@ -32,7 +32,7 @@ export default {
   methods: {
     getPictures () {
       bus.$emit('init')
-      this.$axios.post('http://localhost:3000/api/image/list', {
+      this.$axios.post('/api/image/list', {
         link: this.address
       }).then((res) => {
         console.log(res.data.message)
