@@ -27,9 +27,9 @@
 </template>
 
 <script>
-//import HelloWorld from './components/HelloWorld';
-import Input from './components/Input';
-import ImageList from './components/ImageList';
+// import HelloWorld from './components/HelloWorld';
+import Input from './components/Input'
+import ImageList from './components/ImageList'
 
 export default {
   name: 'App',
@@ -39,6 +39,6 @@ export default {
   },
   data: () => ({
     //
-  }),
-};
+  })
+}
 </script>
