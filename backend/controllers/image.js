@@ -1,17 +1,16 @@
-const cheerio = require('cheerio');
-const axios = require('axios');
+const cheerio = require('cheerio')
+const axios = require('axios')
 
 exports.getImages = async (req, res, next) => {
-  const { link } = req.body;
+  const { link } = req.body
 
   axios.get(link).then((body) => {
     const $ = cheerio.load(body.data)
-    let str = '';
+    let str = ''
     $('script').each((index, elem) => {
-      let tmp = $(elem).html();
+      let tmp = $(elem).html()
       if (tmp.substring(0, 18) === 'window._sharedData') {
-        str = tmp
-        str = str.substring(21, str.length - 1)
+        str = tmp.substring(21, tmp.length - 1)
       }
     })
 
