@@ -3,17 +3,17 @@
     <v-container>
       <v-row dense>
         <v-col
-          v-for="imgLink in imgLinks"
-          v-bind:key="imgLink.no"
+          v-for="(imgLink, i) in imgLinks"
+          v-bind:key="i"
         >
           <v-card
             class="mx-auto mt-7"
             width="350"
-            v-on:click="onClick(imgLink.link)"
+            v-on:click="onClick(imgLink)"
           >
             <v-img
               height="350"
-              v-bind:src="imgLink.link"
+              v-bind:src="imgLink"
             >
             </v-img>
           </v-card>
@@ -36,12 +36,8 @@ export default {
     bus.$on('init', () => {
       this.imgLinks = []
     })
-    bus.$on('go', (link, no) => {
-      this.imgLinks.push({
-        link: link,
-        no: no
-      })
-      this.len = this.imgLinks.length
+    bus.$on('go', (link) => {
+      this.imgLinks = link
     })
   },
   methods: {

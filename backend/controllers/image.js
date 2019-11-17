@@ -21,10 +21,7 @@ exports.getImages = async (req, res, next) => {
                   .shortcode_media
 
     let ret = { 
-      imgLinks: [{
-        imgLink: object.display_url,
-        no: 0
-      }],
+      imgLinks: [object.display_url],
       message: 'success'
     }
 
@@ -32,10 +29,7 @@ exports.getImages = async (req, res, next) => {
       object = object.edge_sidecar_to_children.edges
       
       for (let i = 1; i < object.length; i++) {
-        ret.imgLinks.push({
-          imgLink: object[i].node.display_url,
-          no: i
-        })
+        ret.imgLinks.push(object[i].node.display_url)
       }
     } catch (err) {
 

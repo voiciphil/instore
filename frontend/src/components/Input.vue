@@ -35,9 +35,7 @@ export default {
       this.$axios.post('/api/image/list', {
         link: this.address
       }).then((res) => {
-        for (let i = 0; i < res.data.imgLinks.length; i++) {
-          bus.$emit('go', res.data.imgLinks[i].imgLink, res.data.imgLinks[i].no)
-        }
+        bus.$emit('go', res.data.imgLinks)
       })
     }
   }
