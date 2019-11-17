@@ -20,22 +20,43 @@ exports.getImages = async (req, res, next) => {
                   .graphql
                   .shortcode_media
 
-    let ret = { 
-      imgLinks: [object.display_url],
+    let ret1 = { 
+      imgLinks: [{
+        imgLink: object.display_url,
+        isVideo: object.is_video,
+        videoLink: ''
+      }],
       message: 'success'
+    }
+
+    if (object.is_video) {
+      ret1.imgLinks[0].videoLink = object.video_url
     }
 
     try {
       object = object.edge_sidecar_to_children.edges
-      
-      for (let i = 1; i < object.length; i++) {
-        ret.imgLinks.push(object[i].node.display_url)
+
+      let ret2 = {
+        imgLinks: [],
+        message: 'success'
       }
+
+      for (let i = 0; i < object.length; i++) {
+        let item = {
+          imgLink: object[i].node.display_url,
+          isVideo: object[i].node.is_video,
+          videoLink: ''
+        }
+        if (object[i].node.is_video) {
+          item.videoLink = object[i].node.video_url
+        }
+        ret2.imgLinks.push(item)
+      }
+      
+      res.json(ret2)
     } catch (err) {
-
+      res.json(ret1)
     }
-
-    res.json(ret)
   }).catch((err) => {
     res.json({
       imgLinks: [],
