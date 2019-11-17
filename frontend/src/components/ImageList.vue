@@ -9,11 +9,11 @@
           <v-card
             class="mx-auto mt-7"
             width="350"
-            v-on:click="onClick(imgLink)"
+            v-on:click="onClick(i)"
           >
             <v-img
               height="350"
-              v-bind:src="imgLink"
+              v-bind:src="imgLink.imgLink"
             >
             </v-img>
           </v-card>
@@ -41,8 +41,12 @@ export default {
     })
   },
   methods: {
-    onClick (link) {
-      window.open(link, 'image')
+    onClick (i) {
+      if (this.imgLinks[i].isVideo) {
+        window.open(this.imgLinks[i].videoLink, 'video')
+      } else {
+        window.open(this.imgLinks[i].imgLink, 'image')
+      }
     }
   }
 }
