@@ -5,20 +5,7 @@
         <span>Instore</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn
-        text
-        target="_blank"
-      >
-        <span>sign in</span>
-      </v-btn>
-      <v-btn
-        text
-        target="_blank"
-      >
-        <span>sign up</span>
-      </v-btn>
     </v-app-bar>
-
     <v-content>
       <Input/>
       <ImageList/>
@@ -27,7 +14,6 @@
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld';
 import Input from './components/Input'
 import ImageList from './components/ImageList'
 
@@ -38,7 +24,7 @@ export default {
     ImageList
   },
   data: () => ({
-    //
+
   })
 }
 </script>
