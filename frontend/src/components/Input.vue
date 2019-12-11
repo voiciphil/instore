@@ -32,8 +32,10 @@ export default {
   methods: {
     getPictures () {
       bus.$emit('init')
+      const link = this.address
+      this.address = ''
       this.$axios.post('/api/image/list', {
-        link: this.address
+        link
       }).then((res) => {
         bus.$emit('go', res.data.imgLinks)
       })
