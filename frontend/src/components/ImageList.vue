@@ -16,6 +16,17 @@
               v-bind:src="imgLink.imgLink"
             >
             </v-img>
+            <v-btn
+              color="white"
+              fab
+              top
+              left
+              small
+              absolute
+              class="mt-9 disabled"
+            >
+              <v-icon>{{ imgLink.isVideo ? 'mdi-video' : 'mdi-image' }}</v-icon>
+            </v-btn>
           </v-card>
         </v-col>
       </v-row>
@@ -53,5 +64,7 @@ export default {
 </script>
 
 <style>
-
+.disabled {
+  pointer-events: none;
+}
 </style>
