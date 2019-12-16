@@ -2,6 +2,7 @@
   <div class="body">
     <v-text-field
       v-model="address"
+      v-bind:rules="[rule]"
       class="mt-5 mb-0 ml-10 mr-10"
       outlined="outlined"
       clearable
@@ -26,16 +27,25 @@ export default {
   data () {
     return {
       btn: 'GO!',
-      address: ''
+      address: '',
+      valid: true
     }
   },
   methods: {
     async getPictures () {
       bus.$emit('init')
-      const link = this.address
-      this.address = ''
-      const res = await this.$axios.post('/api/image/list', { link })
-      bus.$emit('go', res.data.imgLinks)
+      const res = await this.$axios.post('/api/image/list', { link: this.address })
+      if (res.data.message === 'success') {
+        this.valid = true
+        bus.$emit('go', res.data.imgLinks)
+        this.address = ''
+      } else {
+        this.valid = false
+        this.address = ''
+      }
+    },
+    rule () {
+      return this.valid || '유효한 URL을 입력하세요.'
     }
   }
 }
