@@ -33,15 +33,17 @@ export default {
   },
   methods: {
     async getPictures () {
-      bus.$emit('init')
-      const res = await this.$axios.post('/api/image/list', { link: this.address })
-      if (res.data.message === 'success') {
-        this.valid = true
-        bus.$emit('go', res.data.imgLinks)
-        this.address = ''
-      } else {
-        this.valid = false
-        this.address = ''
+      if (this.address !== '') {
+        bus.$emit('init')
+        const res = await this.$axios.post('/api/image/list', { link: this.address })
+        if (res.data.message === 'success') {
+          this.valid = true
+          bus.$emit('go', res.data.imgLinks)
+          this.address = ''
+        } else {
+          this.valid = false
+          this.address = ''
+        }
       }
     },
     rule () {
