@@ -4,8 +4,10 @@ const axios = require('axios')
 exports.getImages = async (req, res, next) => {
   const { link } = req.body
 
-  axios.get(link).then((body) => {
+  try {
+    const body = await axios.get(link)
     const $ = cheerio.load(body.data)
+    
     let str = ''
     $('script').each((index, elem) => {
       let tmp = $(elem).html()
@@ -14,11 +16,7 @@ exports.getImages = async (req, res, next) => {
       }
     })
 
-    let object = JSON.parse(str)
-                  .entry_data
-                  .PostPage[0]
-                  .graphql
-                  .shortcode_media
+    let object = JSON.parse(str).entry_data.PostPage[0].graphql.shortcode_media
 
     let ret1 = { 
       imgLinks: [{
@@ -57,10 +55,10 @@ exports.getImages = async (req, res, next) => {
     } catch (err) {
       res.json(ret1)
     }
-  }).catch((err) => {
+  } catch(err) {
     res.json({
       imgLinks: [],
       message: err.toString()
     })
-  })
+  }
 } 
