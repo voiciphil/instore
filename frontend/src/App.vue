@@ -5,6 +5,14 @@
         <span>Instore</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
+      <v-toolbar-items>
+        <v-btn
+          v-on:click="move"
+          text
+        >
+          {{ help ? 'home' : 'help' }}
+        </v-btn>
+      </v-toolbar-items>
     </v-app-bar>
     <v-content>
       <router-view></router-view>
@@ -16,7 +24,18 @@
 export default {
   name: 'App',
   data: () => ({
-
-  })
+    help: false
+  }),
+  methods: {
+    move () {
+      if (this.help) {
+        this.help = false
+        this.$router.push('/')
+      } else {
+        this.help = true
+        this.$router.push('/help')
+      }
+    }
+  }
 }
 </script>

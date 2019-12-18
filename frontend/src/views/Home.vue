@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import Input from '../components/Input'
-import ImageList from '../components/ImageList'
+import Input from '../components/home/Input'
+import ImageList from '../components/home/ImageList'
 
 export default {
   components: {
