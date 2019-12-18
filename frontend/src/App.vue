@@ -7,22 +7,14 @@
       <v-spacer></v-spacer>
     </v-app-bar>
     <v-content>
-      <Input/>
-      <ImageList/>
+      <router-view></router-view>
     </v-content>
   </v-app>
 </template>
 
 <script>
-import Input from './components/Input'
-import ImageList from './components/ImageList'
-
 export default {
   name: 'App',
-  components: {
-    Input,
-    ImageList
-  },
   data: () => ({
 
   })
