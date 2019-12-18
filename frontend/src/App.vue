@@ -10,7 +10,7 @@
           v-on:click="move"
           text
         >
-          {{ help ? 'home' : 'help' }}
+          <v-icon large>{{ help ? 'mdi-home-circle-outline' : 'mdi-help-circle-outline' }}</v-icon>
         </v-btn>
       </v-toolbar-items>
     </v-app-bar>
