@@ -11,15 +11,19 @@
       hint="인스타그램 게시물의 URL을 입력하세요."
     >
     </v-text-field>
-    <v-progress-linear
-      v-bind:indeterminate="inProgress"
-      v-if="inProgress"
-      striped
-      class="mt-n5"
-      height="10"
-      width="300"
+    <v-row
+      class="mx-5"
     >
-    </v-progress-linear>
+      <v-progress-linear
+        v-bind:indeterminate="inProgress"
+        v-if="inProgress"
+        striped
+        class="mt-n5"
+        height="10"
+        width="300"
+      >
+      </v-progress-linear>
+    </v-row>
   </div>
 </template>
 
