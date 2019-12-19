@@ -9,7 +9,7 @@
         <v-btn
           v-on:click="move"
           text
-          max-width="30"
+          width="100"
         >
           {{ help ? 'home' : 'help' }}
         </v-btn>
