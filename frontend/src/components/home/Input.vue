@@ -5,6 +5,7 @@
       v-model="address"
       v-bind:rules="[rule]"
       v-on:click:append="getPictures"
+      v-on:keyup.enter="getPictures"
       append-icon="mdi-send"
       outlined
       label="URL"
