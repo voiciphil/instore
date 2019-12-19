@@ -9,8 +9,9 @@
         <v-btn
           v-on:click="move"
           text
+          max-width="30"
         >
-          <v-icon large>{{ help ? 'mdi-home-circle-outline' : 'mdi-help-circle-outline' }}</v-icon>
+          {{ help ? 'home' : 'help' }}
         </v-btn>
       </v-toolbar-items>
     </v-app-bar>
