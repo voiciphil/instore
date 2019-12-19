@@ -54,9 +54,9 @@ export default {
   methods: {
     onClick (i) {
       if (this.imgLinks[i].isVideo) {
-        window.open(this.imgLinks[i].videoLink)
+        location.replace(this.imgLinks[i].videoLink)
       } else {
-        window.open(this.imgLinks[i].imgLink)
+        location.replace(this.imgLinks[i].imgLink)
       }
     }
   }
