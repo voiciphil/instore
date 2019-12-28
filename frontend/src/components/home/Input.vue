@@ -12,19 +12,6 @@
       hint="인스타그램 게시물의 URL을 입력하세요."
     >
     </v-text-field>
-    <v-row
-      class="mx-5"
-    >
-      <v-progress-linear
-        v-bind:indeterminate="inProgress"
-        v-if="inProgress"
-        striped
-        class="mt-n5"
-        height="10"
-        width="300"
-      >
-      </v-progress-linear>
-    </v-row>
   </div>
 </template>
 
@@ -44,9 +31,9 @@ export default {
     async getPictures () {
       if (this.address !== '') {
         bus.$emit('init')
-        this.inProgress = true
+        bus.$emit('progress', true)
         const res = await this.$axios.post('/api/image/list', { link: this.address })
-        this.inProgress = false
+        bus.$emit('progress', false)
         if (res.data.message === 'success') {
           this.valid = true
           bus.$emit('go', res.data.imgLinks)
