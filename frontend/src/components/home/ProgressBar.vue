@@ -2,9 +2,9 @@
   <div>
     <v-progress-linear
       v-bind:indeterminate="inProgress"
-      width="300"
-    >
-    </v-progress-linear>
+      height="2"
+      color="grey"
+    />
   </div>
 </template>
 

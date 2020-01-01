@@ -10,8 +10,8 @@
       outlined
       label="URL"
       hint="인스타그램 게시물의 URL을 입력하세요."
-    >
-    </v-text-field>
+      color="grey darken-4"
+    />
   </div>
 </template>
 

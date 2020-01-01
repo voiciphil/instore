@@ -14,8 +14,7 @@
             <v-img
               height="350"
               v-bind:src="imgLink.imgLink"
-            >
-            </v-img>
+            />
             <v-btn
               color="white"
               fab
