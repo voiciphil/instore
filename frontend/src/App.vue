@@ -4,15 +4,35 @@
       <v-toolbar-title class="headline text-uppercase">
         <span>Instore</span>
       </v-toolbar-title>
+      <v-progress-linear
+        v-bind:active="inProgress"
+        color="grey darken-4"
+        height="3"
+        indeterminate
+        absolute
+        bottom
+      />
     </v-app-bar>
     <v-content>
-      <router-view></router-view>
+      <router-view/>
     </v-content>
   </v-app>
 </template>
 
 <script>
+import bus from './bus'
+
 export default {
-  name: 'App'
+  name: 'App',
+  data () {
+    return {
+      inProgress: false
+    }
+  },
+  created () {
+    bus.$on('progress', (state) => {
+      this.inProgress = state
+    })
+  }
 }
 </script>
