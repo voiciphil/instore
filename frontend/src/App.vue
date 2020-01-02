@@ -10,7 +10,7 @@
         height="3"
         indeterminate
         absolute
-        bottom
+        top
       />
     </v-app-bar>
     <v-content>
