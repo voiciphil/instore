@@ -4,14 +4,10 @@ Save the pictures on Instagram!
 ## Instruction
 
 <img src="./img/1.png" width="25%"><img src="./img/2.png" width="25%"><img src="./img/3.png" width="25%"><img src="./img/4.png" width="25%">
-1. Copy link of posts.
-
-2. Paste to input box and press enter key or send button.
-
-3. Click an image what you want to save.
-
+1. Copy the link to the Instagram post.
+2. Paste into the input box and send button or press enter key.
+3. Click on the image what you want.
 4. It will open with a new tab. Then save the image.
-
 
 ## Installation
 Clone the repository.
