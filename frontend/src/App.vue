@@ -12,6 +12,14 @@
         absolute
         top
       />
+      <v-spacer/>
+      <v-toolbar-items>
+        <v-btn
+          v-on:click="help"
+          class="text-uppercase"
+          text
+        >help</v-btn>
+      </v-toolbar-items>
     </v-app-bar>
     <v-content>
       <router-view/>
@@ -33,6 +41,11 @@ export default {
     bus.$on('progress', (state) => {
       this.inProgress = state
     })
+  },
+  methods: {
+    help () {
+      window.open('https://github.com/voiciphil/instore/blob/master/README.md')
+    }
   }
 }
 </script>
