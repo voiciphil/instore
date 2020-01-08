@@ -1,7 +1,7 @@
 # INSTORE
 Save the pictures on Instagram!
 
-## Instruction
+## Instructions
 
 <img src="./img/1.png" width="25%"><img src="./img/2.png" width="25%"><img src="./img/3.png" width="25%"><img src="./img/4.png" width="25%">
 1. Copy the link of the Instagram post.
