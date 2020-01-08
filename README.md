@@ -10,7 +10,13 @@ Save the pictures on Instagram!
 4. It will open with a new tab. Then save the image.
 
 ## Installation
-Clone the repository.
+
+### Requirements
+* git
+* node.js
+* npm
+
+Clone this repository.
 ```
 $ git clone https://github.com/voiciphil/instore.git
 ```
@@ -26,4 +32,4 @@ $ cd ../backend
 $ npm install
 $ npm start
 ```
-Now the website is running on `localhost:3000`.
+Now Instore is running on `http://localhost:3000`.
