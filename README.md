@@ -1,5 +1,5 @@
 # INSTORE
-Save pictures on Instagram!
+Save the pictures on Instagram!
 
 ## Instructions
 
