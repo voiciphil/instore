@@ -16,12 +16,13 @@
               v-bind:src="imgLink.imgLink"
             />
             <v-btn
-              color="white"
+              color="black"
               fab
               top
               left
               small
               absolute
+              dark
               class="mt-9 disabled"
             >
               <v-icon>{{ imgLink.isVideo ? 'mdi-video' : 'mdi-image' }}</v-icon>

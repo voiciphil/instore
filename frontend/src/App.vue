@@ -6,7 +6,6 @@
       </v-toolbar-title>
       <v-progress-linear
         v-bind:active="inProgress"
-        color="grey darken-4"
         height="3"
         indeterminate
         absolute
