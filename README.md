@@ -9,6 +9,8 @@ Save the pictures on Instagram!
 3. Click on the image what you want.
 4. It will open with a new tab. Then you can save the image.
 
+*Do not work for private account.
+
 ## Installation
 
 ### Requirements
