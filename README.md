@@ -35,3 +35,11 @@ $ npm install
 $ npm start
 ```
 Now Instore is running on `http://localhost:3000`.
+
+## Technical Stack
+
+### Frontend
+* Vue.js
+* Vuetify.js
+### Backend
+* Express.js
