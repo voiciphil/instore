@@ -9,6 +9,8 @@ Save the pictures on Instagram!
 3. Click on the image what you want.
 4. It will open with a new tab. Then you can save the image.
 
+* It doesn't work with a private account.
+
 ## Installation
 
 ### Requirements
@@ -33,3 +35,11 @@ $ npm install
 $ npm start
 ```
 Now Instore is running on `http://localhost:3000`.
+
+## Technical Stack
+
+### Frontend
+* Vue.js
+* Vuetify.js
+### Backend
+* Express.js
