@@ -1,7 +1,7 @@
 # INSTORE
 Save the pictures on Instagram!
 
-## Instructions
+## :seedling:Instructions
 
 <img src="./img/1.png" width="25%"><img src="./img/2.png" width="25%"><img src="./img/3.png" width="25%"><img src="./img/4.png" width="25%">
 1. Copy the link of the Instagram post.
@@ -11,7 +11,7 @@ Save the pictures on Instagram!
 
 * It doesn't work with a private account.
 
-## Installation
+## :seedling:Installation
 
 ### Requirements
 * git
@@ -36,7 +36,7 @@ $ npm start
 ```
 Now Instore is running on `http://localhost:3000`.
 
-## Technical Stack
+## :seedling:Technical Stack
 
 ### Frontend
 * Vue.js
