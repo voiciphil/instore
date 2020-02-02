@@ -6,15 +6,15 @@
 </template>
 
 <script>
-import Input from '../components/home/Input'
-import ImageList from '../components/home/ImageList'
+import Input from '../components/home/Input.vue';
+import ImageList from '../components/home/ImageList.vue';
 
 export default {
   components: {
     Input,
-    ImageList
-  }
-}
+    ImageList,
+  },
+};
 </script>
 
 <style>

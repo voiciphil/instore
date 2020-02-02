@@ -35,32 +35,32 @@
 </template>
 
 <script>
-import bus from '../../bus'
+import bus from '../../bus';
 
 export default {
-  data () {
+  data() {
     return {
-      imgLinks: []
-    }
+      imgLinks: [],
+    };
   },
-  created () {
+  created() {
     bus.$on('init', () => {
-      this.imgLinks = []
-    })
+      this.imgLinks = [];
+    });
     bus.$on('go', (link) => {
-      this.imgLinks = link
-    })
+      this.imgLinks = link;
+    });
   },
   methods: {
-    onClick (i) {
+    onClick(i) {
       if (this.imgLinks[i].isVideo) {
-        window.open(this.imgLinks[i].videoLink)
+        window.open(this.imgLinks[i].videoLink);
       } else {
-        window.open(this.imgLinks[i].imgLink)
+        window.open(this.imgLinks[i].imgLink);
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped>

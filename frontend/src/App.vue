@@ -27,24 +27,24 @@
 </template>
 
 <script>
-import bus from './bus'
+import bus from './bus';
 
 export default {
   name: 'App',
-  data () {
+  data() {
     return {
-      inProgress: false
-    }
+      inProgress: false,
+    };
   },
-  created () {
+  created() {
     bus.$on('progress', (state) => {
-      this.inProgress = state
-    })
+      this.inProgress = state;
+    });
   },
   methods: {
-    help () {
-      window.open('https://github.com/voiciphil/instore/blob/master/README.md')
-    }
-  }
-}
+    help() {
+      window.open('https://github.com/voiciphil/instore/blob/master/README.md');
+    },
+  },
+};
 </script>

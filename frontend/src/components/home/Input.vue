@@ -15,39 +15,40 @@
 </template>
 
 <script>
-import bus from '../../bus'
+import bus from '../../bus';
+import service from '../../service';
 
 export default {
-  data () {
+  data() {
     return {
       btn: 'GO!',
       address: '',
       valid: true,
-      inProgress: false
-    }
+      inProgress: false,
+    };
   },
   methods: {
-    async getPictures () {
+    async getPictures() {
       if (this.address !== '') {
-        bus.$emit('init')
-        bus.$emit('progress', true)
-        const res = await this.$axios.post('/api/image/list', { link: this.address })
-        bus.$emit('progress', false)
-        if (res.data.message === 'success') {
-          this.valid = true
-          bus.$emit('go', res.data.imgLinks)
-          this.address = ''
+        bus.$emit('init');
+        bus.$emit('progress', true);
+        const res = await service.getImages(this.address);
+        bus.$emit('progress', false);
+        if (res.message === 'success') {
+          this.valid = true;
+          bus.$emit('go', res.imgLinks);
+          this.address = '';
         } else {
-          this.valid = false
-          this.address = ''
+          this.valid = false;
+          this.address = '';
         }
       }
     },
-    rule () {
-      return this.valid || '유효한 URL을 입력하세요.'
-    }
-  }
-}
+    rule() {
+      return this.valid || '유효한 URL을 입력하세요.';
+    },
+  },
+};
 </script>
 
 <style>

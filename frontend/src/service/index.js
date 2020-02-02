@@ -1,9 +1,8 @@
 const cheerio = require('cheerio');
+// eslint-disable-next-line import/no-extraneous-dependencies
 const axios = require('axios');
 
-exports.getImages = async (req, res) => {
-  const { link } = req.body;
-
+exports.getImages = async (link) => {
   try {
     const body = await axios.get(link);
     const $ = cheerio.load(body.data);
@@ -51,14 +50,14 @@ exports.getImages = async (req, res) => {
         ret2.imgLinks.push(item);
       }
 
-      res.json(ret2);
+      return ret2;
     } catch (err) {
-      res.json(ret1);
+      return ret1;
     }
   } catch (err) {
-    res.json({
+    return {
       imgLinks: [],
       message: err.toString(),
-    });
+    };
   }
 };
