@@ -62,3 +62,6 @@ typings/
 
 # build output
 backend/public/
+
+#JetBrain
+.idea
